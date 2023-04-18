@@ -1,11 +1,11 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { transactionContext } from "../context/TransactionContext/TransactionsContext";
 
 import Modal from "./Modal";
 
 const AllTransactions = ({ transactions, accountID }) => {
-  const { open, setOpen, id, setId } = useContext(transactionContext);
+  const { setOpen, setId } = useContext(transactionContext);
 
   const handleDelete = (e) => {
     e.preventDefault();

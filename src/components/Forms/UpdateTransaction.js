@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useState, useContext } from "react";
 import { transactionContext } from "../context/TransactionContext/TransactionsContext";
 import { accountContext } from "../context/AccountContext/AccountContext";
@@ -10,7 +11,6 @@ export default function UpdateTransaction() {
   const fetchedData = account?.data?.transactions?.find(
     (data) => data.id === id
   );
-  console.log("Account", account);
 
   const { updateTransactionAction, error } = useContext(transactionContext);
   const [formData, setFormData] = useState({

@@ -16,7 +16,6 @@ const Login = () => {
   const onChangeInput = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-  console.log(userAuth);
   //SUBMIT
   const onSubmitHandler = (e) => {
     e.preventDefault();

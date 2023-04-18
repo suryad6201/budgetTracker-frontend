@@ -104,7 +104,6 @@ export const AccountContextProvider = ({ children }) => {
         });
       }
     } catch (error) {
-      console.log(error);
       dispatch({
         type: ACCOUNT_CREATION_FAIL,
         payload: error?.data?.response?.message,

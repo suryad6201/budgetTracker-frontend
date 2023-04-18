@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useState, useContext } from "react";
 import { transactionContext } from "../context/TransactionContext/TransactionsContext";
 import { useParams } from "react-router-dom";
@@ -11,7 +12,7 @@ export default function AddTransaction() {
     amount: "",
     category: "",
     notes: "",
-    color: "",
+    color: "#000000",
     date: "",
   });
   //handle form change
