@@ -75,6 +75,7 @@ export const TransactionContextProvider = ({ children }) => {
         dispatch({ type: TRANSACTION_CREATION_SUCCESS, payload: res?.data });
       }
     } catch (error) {
+      console.log("Transaction create fail", error);
       dispatch({
         type: TRANSACTION_CREATION_FAIL,
         payload: error?.response?.data?.message,
@@ -103,6 +104,7 @@ export const TransactionContextProvider = ({ children }) => {
         dispatch({ type: TRANSACTION_UPDATE_SUCCESS, payload: res?.data });
       }
     } catch (error) {
+      console.log("Transaction update fail", error);
       dispatch({
         type: TRANSACTION_UPDATE_FAIL,
         payload: error?.response?.data?.message,
@@ -131,6 +133,7 @@ export const TransactionContextProvider = ({ children }) => {
         dispatch({ type: TRANSACTION_DELETE_SUCCESS, payload: res?.data });
       }
     } catch (error) {
+      console.log("Transaction delete fail", error);
       dispatch({
         type: TRANSACTION_DELETE_FAIL,
         payload: error?.response?.data?.message,

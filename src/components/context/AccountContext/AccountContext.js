@@ -80,6 +80,7 @@ export const AccountContextProvider = ({ children }) => {
         });
       }
     } catch (error) {
+      console.log("Get account", error);
       dispatch({
         type: ACCOUNT_DETAILS_FAIL,
         payload: error?.data?.response?.message,
@@ -104,6 +105,7 @@ export const AccountContextProvider = ({ children }) => {
         });
       }
     } catch (error) {
+      console.log("Create account", error);
       dispatch({
         type: ACCOUNT_CREATION_FAIL,
         payload: error?.data?.response?.message,

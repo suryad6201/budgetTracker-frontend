@@ -111,6 +111,7 @@ const AuthContextProvider = ({ children }) => {
       //Redirect
       window.location.href = "/login";
     } catch (error) {
+      console.log("Register fail", error);
       dispatch({
         type: REGISTER_FAIL,
         payload: error?.response.data?.message,
@@ -132,6 +133,7 @@ const AuthContextProvider = ({ children }) => {
       //Redirect
       window.location.href = "/dashboard";
     } catch (error) {
+      console.log("Login fail", error);
       dispatch({
         type: LOGIN_FAILED,
         payload: error?.response.data?.message,
