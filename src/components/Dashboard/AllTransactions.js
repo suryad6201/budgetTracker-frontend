@@ -85,8 +85,8 @@ const AllTransactions = ({ transactions, accountID }) => {
                     {transactions?.map((transaction) => {
                       return (
                         <tr
-                          key={transaction?.email}
                           className={transaction?.color}
+                          key={transaction?._id}
                         >
                           <td className="whitespace-nowrap py-4  pl-4 pr-16 text-sm sm:pl-6">
                             <div className="flex items-center">

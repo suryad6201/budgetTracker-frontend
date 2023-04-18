@@ -60,14 +60,14 @@ const AccountList = ({ accounts }) => {
                 </div>
                 {accounts?.map((acc) => {
                   return (
-                    <a className="group block mb-6" href="#">
+                    <div key={acc._id} className="group block mb-6">
                       <div className="flex items-center justify-between flex-wrap p-10 bg-coolGray-50 group-hover:bg-coolGray-100 rounded-md shadow-md transition duration-200">
                         <div className="w-full md:w-1/2 mb-2 md:mb-0">
                           <h3 className="text-lg md:text-xl text-coolGray-800 group-hover:text-coolGray-900 font-semibold">
                             {acc?.name}
                           </h3>
                         </div>
-                        <Link to={`/account-details/${acc?._id}`}>
+                        <Link key={acc._id} to={`/account-details/${acc?._id}`}>
                           <div className="w-full md:w-1/2 md:text-right">
                             <div className="inline-flex items-center leading-6 text-green-500 group-hover:text-green-600 font-medium transition duration-200">
                               <span className="mr-2">View</span>
@@ -87,7 +87,7 @@ const AccountList = ({ accounts }) => {
                           </div>
                         </Link>
                       </div>
-                    </a>
+                    </div>
                   );
                 })}
               </>

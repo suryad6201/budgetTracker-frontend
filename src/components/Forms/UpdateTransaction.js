@@ -11,7 +11,7 @@ export default function UpdateTransaction() {
   const fetchedData = account?.data?.transactions?.find(
     (data) => data.id === id
   );
-  console.log(fetchedData);
+
   const { updateTransactionAction, error } = useContext(transactionContext);
 
   const [formData, setFormData] = useState({
@@ -71,10 +71,8 @@ export default function UpdateTransaction() {
                   onChange={handleChange}
                   className="mt-1 block w-full border-2 rounded-md border-gray-300 py-2 pl-3 pr-10 text-base focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                 >
-                  <option value="">Select</option>
-                  <option value="Income" s>
-                    Income (+)
-                  </option>
+                  <option value="Select">Select</option>
+                  <option value="Income">Income (+)</option>
                   <option value="Expenses">Expense (-)</option>
                 </select>
               </div>
@@ -103,7 +101,7 @@ export default function UpdateTransaction() {
                   onChange={handleChange}
                   className="mt-1 block w-full border-2 rounded-md border-gray-300 py-2 pl-3 pr-10 text-base focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                 >
-                  <option value="">Select</option>
+                  <option value="Select">Select</option>
                   <option value="Food">Food</option>
                   <option value="Transportation">Transportation</option>
                   <option value="Entertainment">Entertainment</option>
