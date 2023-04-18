@@ -8,7 +8,6 @@ const AccountDashboard = () => {
   //Dispatch action
   useEffect(() => {
     fetchProfileAction();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

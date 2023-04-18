@@ -5,7 +5,7 @@ import { transactionContext } from "../context/TransactionContext/TransactionsCo
 import Modal from "./Modal";
 
 const AllTransactions = ({ transactions, accountID }) => {
-  const { setOpen, setId } = useContext(transactionContext);
+  const { setOpen, setId, error } = useContext(transactionContext);
 
   const handleDelete = (e) => {
     e.preventDefault();
@@ -44,7 +44,7 @@ const AllTransactions = ({ transactions, accountID }) => {
                     <tr>
                       <th
                         scope="col"
-                        className="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6"
+                        className=" py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6"
                       >
                         Name
                       </th>
@@ -68,9 +68,15 @@ const AllTransactions = ({ transactions, accountID }) => {
                       </th>
                       <th
                         scope="col"
-                        className="relative py-3.5 pl-3 pr-4 sm:pr-6"
+                        className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
                       >
-                        <span className="sr-only">Edit</span>
+                        Date
+                      </th>
+                      <th
+                        scope="col"
+                        className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
+                      >
+                        Action
                       </th>
                     </tr>
                   </thead>
@@ -82,13 +88,12 @@ const AllTransactions = ({ transactions, accountID }) => {
                           key={transaction?.email}
                           className={transaction?.color}
                         >
-                          <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm sm:pl-6">
+                          <td className="whitespace-nowrap py-4  pl-4 pr-16 text-sm sm:pl-6">
                             <div className="flex items-center">
                               <div className="ml-4">
                                 <div className="font-medium text-gray-900">
                                   {transaction?.name}
                                 </div>
-                                {/* <div className="text-gray-500">Emma</div> */}
                               </div>
                             </div>
                           </td>
@@ -111,15 +116,15 @@ const AllTransactions = ({ transactions, accountID }) => {
                           <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                             {transaction?.notes}
                           </td>
-                          <td className="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
+                          <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                            {transaction?.date.slice(0, 10)}
+                          </td>
+                          <td className="whitespace-nowrap py-4 pl-3 pr-4 text-left text-sm font-medium sm:pr-6">
                             <Link
                               to={`/edit-transaction/${transaction._id}`}
                               className="text-indigo-600 hover:text-indigo-900"
                             >
                               Edit
-                              <span className="sr-only">
-                                , {transaction?.name}
-                              </span>
                             </Link>
                             <span>&nbsp; &nbsp; </span>
                             <button
@@ -128,9 +133,6 @@ const AllTransactions = ({ transactions, accountID }) => {
                               className="text-red-600 hover:text-red-800"
                             >
                               Delete
-                              <span className="sr-only">
-                                , {transaction?.name}
-                              </span>
                             </button>
                           </td>
                         </tr>

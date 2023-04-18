@@ -5,7 +5,8 @@ import AllTransactions from "./AllTransactions";
 import { PlusIcon } from "@heroicons/react/20/solid";
 
 export default function AccountDetails() {
-  const { getAccountDetailsAction, account } = useContext(accountContext);
+  const { getAccountDetailsAction, account, error } =
+    useContext(accountContext);
   const { accountID } = useParams();
 
   useEffect(() => {

@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 export default function AddTransaction() {
   const { id } = useParams();
   const { createTransactionAction, error } = useContext(transactionContext);
+
   const [formData, setFormData] = useState({
     name: "",
     transactionType: "",

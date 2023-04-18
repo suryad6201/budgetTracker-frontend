@@ -2,6 +2,7 @@
 import { Link } from "react-router-dom";
 
 const AccountList = ({ accounts }) => {
+  console.log("Accounts list", accounts);
   return (
     <>
       <section className="py-24 bg-white">

@@ -11,8 +11,9 @@ export default function UpdateTransaction() {
   const fetchedData = account?.data?.transactions?.find(
     (data) => data.id === id
   );
-
+  console.log(fetchedData);
   const { updateTransactionAction, error } = useContext(transactionContext);
+
   const [formData, setFormData] = useState({
     name: fetchedData.name,
     transactionType: fetchedData.transactionType,
@@ -20,7 +21,7 @@ export default function UpdateTransaction() {
     category: fetchedData.category,
     notes: fetchedData.notes,
     color: fetchedData.color,
-    date: fetchedData.date,
+    date: fetchedData.date.slice(0, 10),
   });
   //handle form change
   const handleChange = (e) => {
